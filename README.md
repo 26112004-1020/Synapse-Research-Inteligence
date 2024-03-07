@@ -16,13 +16,4 @@ Synapse is an advanced research intelligence tool that utilizes cutting-edge tec
 
 ![Technology Stack](technology_stack.png)
 
-### Intel® Tools and Technologies Used:
-
-- Intel® AI Analytics Toolkit
-- Intel® Extension for PyTorch
-- Intel® oneAPI Data Analytics Library (oneDAL)
-- Intel® VTune Amplifier
-- OpenVINO™ toolkit
-- Optimum for Intel
-
 Stay tuned for updates!
