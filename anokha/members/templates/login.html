@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block element%}
+
+<style>
+  main {
+      {% comment %} min-height: 100vh; {% endcomment %}
+      background-color: transparent; /* Dark background similar to body */
+      padding: 10px;
+      padding-top: 10%;
+      {% comment %} border: 1px solid #2C2F34; /* Slightly lighter border for some depth */ {% endcomment %}
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .login-container {
+      background-color: #20232a; /* Keeping with the dark theme */
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for emphasis */
+      width: 80%;
+      max-width: 400px;
+       /* Ensuring it doesn't become too wide on larger screens */
+  }
+
+  .login-container h2 {
+      color: #61dafb; /* Using the accent color for headings */
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  .login-form {
+      padding: 20px;
+      background-color: transparent; /* Removing extra backgrounds for a sleek look */
+  }
+
+  .login-form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #61dafb; /* Accent color for labels */
+  }
+
+  .login-form input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc; /* Keeping borders subtle */
+      border-radius: 3px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      background-color: #2C2F34; /* Slightly lighter than main background */
+      color: #ffffff; /* Ensuring text is visible */
+  }
+
+  .login-form button {
+      background-color: #61dafb; /* Accent color for the button */
+      color: #ffffff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+  }
+
+  .login-form button:hover {
+      background-color: #4098D7; /* A slightly different shade for hover effect */
+  }
+
+  .login-form p {
+      font-size: 14px;
+      color: #888; /* Subtle text */
+      margin-top: 10px;
+  }
+
+  .login-form p a {
+      color: #61dafb; /* Accent color for links */
+      text-decoration: none;
+      font-weight: bold;
+  }
+
+  .login-form p a:hover {
+      text-decoration: underline;
+  }
+</style>
+
+
+<main>
+<center>
+
+<div class="login-container">
+  <h2>Login</h2>
+  <form class="login-form" action="" method="POST">
+    {%csrf_token%}
+
+    <label for="username">Username:</label>
+    <input  type="text" id="username" name="username" required >
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <button type="submit">Login</button>
+  </form>
+</div>
+</center>
+</main>
+
+{% endblock %}
+

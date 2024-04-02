@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% block element%}
+{%if form.errors%}
+
+<p>there was an error with your form</p>
+{% endif %}
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #20232a; /* Dark background for overall consistency */
+    color: #ffffff; /* White text for readability */
+  }
+  
+  main {
+    background-color: transparent;
+    {% comment %} padding: 40px; /* Increased padding for better spacing */ {% endcomment %}
+    padding-top: 8%; /* Adjusted top padding for vertical centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Ensures full viewport width */
+    min-height: 100vh; /* Ensures full viewport height */
+  }
+  
+  .login-container {
+    background-color: #20232a; /* Consistent dark theme */
+    padding: 30px; /* Increased padding for a more spacious layout */
+    border-radius: 8px; /* Smoothed corners for a modern look */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow for depth */
+    width: 90%;
+    max-width: 600px; /* Optimized width for better form presentation */
+  }
+  
+  .login-container h2 {
+    color: #61dafb; /* Vibrant accent color for headings */
+    text-align: center;
+    margin-bottom: 30px; /* Increased margin for visual separation */
+  }
+  
+  .login-form {
+    padding: 20px;
+    background-color: transparent;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 15px; /* Increased spacing for clarity */
+    font-weight: 600; /* Adjusted weight for emphasis */
+    color: #61dafb;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 12px 15px; /* Adjusted padding for better input field definition */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px; /* Increased spacing for better separation */
+    font-size: 16px;
+    background-color: #2C2F34;
+    color: #ffffff;
+  }
+  
+  .login-form button {
+    background-color: #61dafb;
+    color: #ffffff;
+    padding: 14px 20px; /* Slightly larger padding for a more clickable area */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added subtle transform */
+  }
+  
+  .login-form button:hover {
+    background-color: #4098D7;
+    transform: translateY(-2px); /* Slight lift effect for interactive feedback */
+  }
+  
+  .login-form p {
+    font-size: 14px;
+    color: #aaa; /* Lightened color for less emphasis */
+    margin-top: 15px; /* Increased spacing for clear separation */
+  }
+  
+  .login-form p a {
+    color: #61dafb;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .login-form p a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (min-width: 768px) {
+    main {
+      padding-top: 0; /* Adjust padding for larger screens */
+    }
+  }
+  
+  
+  
+</style>
+</head>
+<body>
+<main>
+  <div class="login-container">
+    <form class="login-form" action="{% url 'reg_user' %}" method="POST">
+      <h2>Register</h2>
+      {% csrf_token %}
+      {{ form }}
+
+      <button type="submit">Register</button>
+    </form>
+
+
+  </div>
+</main>
+</body>
+{% endblock %}
+

@@ -1,0 +1,294 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block element %}
+
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    height: 83vh;
+    color: #FFFFFF;
+    overflow: hidden;
+  }
+  
+  .app-bar {
+    margin-top: 350px;
+    transform: translateY(-50%);
+    max-width: 70%;
+    padding: 20px;
+  }
+  
+  .launch-button, .access-button {
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .launch-button {
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    color: #FFFFFF;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .access-button {
+    background-color: #ff5722;
+    color: #FFF;
+  }
+  
+  .launch-button:hover, .access-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+  
+  .feature-left .feature-container, .feature-right .feature-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .feature-left .feature-container {
+    flex-direction: row-reverse;
+  }
+  
+  .feature-right .feature-container {
+    flex-direction: row;
+  }
+  
+  .feature-image {
+    object-fit: cover;
+    margin-right: 20px;
+    width: 900px;
+    height: 950px;
+    transition: opacity 2s, transform 0.5s ease-in-out;
+    opacity: 0;
+  }
+
+
+  
+  .feature-text {
+    transition: opacity 2s, transform 0.5s ease-in-out;
+    opacity: 0;
+  }
+  
+  /* Hover effects for images and text */
+  .feature-container:hover .feature-image, .feature-container:hover .feature-text .feature-image-last {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  
+  /* Animations */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes colorChange {
+    0% { color: #00c6ff; }
+    25% { color: #789ecc; }
+    50% { color: #80d780; }
+    75% { color: #2fe12f; }
+    100% { color: #00c6ff; }
+  }
+  
+  @keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .flash-animation {
+    animation: flash 1s infinite;
+  }
+  
+  .launch-button, .access-button {
+    animation: pulse 2s infinite;
+  }
+  
+  h1 {
+    animation: colorChange 6s infinite;
+  }
+
+  .last-feature-image {
+    width: 800px; /* Your desired width */
+    height: 600px; /* Your desired height */
+}
+
+  
+    </style>
+    
+<div id="hero-section" class="hero-section">
+    <!-- Parallax Background -->
+    
+    
+    <!-- AppBar Equivalent -->
+    <div class="app-bar">
+        
+        <button id="beta-launch-button" class="launch-button">How it works</button>
+        <h1>Welcome to the Advanced Research Assistant <span id="typing-effect"></span></h1>
+        <p>Empower your research with cutting-edge tools designed for efficient, ethical, and comprehensive exploration of scholarly articles.</p>
+        <button id="request-access-button" class="access-button">Explore</button>
+    </div>
+
+  </div>
+
+  <br/><br/><br/>
+  <section class="feature-section my-5 feature-left" id="feature1">
+    <div class="feature-container">
+      <img src="{% static 'images/research.jpeg' %}" alt="Feature 1" class="feature-image">
+      <div class="feature-text">
+        <h2>User-Centric Research Input</h2>
+        <p>Refine your research topics with an intuitive interface, leveraging Intel® oneTBB for unparalleled data handling.</p>
+      </div>
+    </div>
+  </section>
+  <br/><br/><br/>
+  <section class="feature-section my-5 feature-right" id="feature2">
+    <div class="feature-container">
+      <img src="{% static 'images/Ethical.png' %}" alt="Feature 2" class="feature-image">
+      <div class="feature-text">
+        <h2>Ethical Data Acquisition</h2>
+        <p>Access a world of knowledge ethically with advanced scraping technologies powered by the Intel® AI Analytics Toolkit.</p>
+      </div>
+    </div>
+  </section>
+  <br/><br/><br/>
+  <section class="feature-section my-5 feature-left" id="feature1">
+    <div class="feature-container">
+      <img src="{% static 'images/knolodge.png' %}" alt="Feature 1" class="feature-image">
+      <div class="feature-text">
+      <h2>Structured Knowledge Discovery</h2>
+      <p>Uncover complex relationships with NLP-driven knowledge graphs, optimized for clarity and speed by Intel® solutions.</p>
+    </div>
+  </div>
+  </section>
+  <br/><br/><br/>
+  <section class="feature-section my-5 feature-right" id="feature2">
+    <div class="feature-container">
+      <img src="{% static 'images/summary.jpeg' %}" alt="Feature 1" class="feature-image">
+      <div class="feature-text">
+      <h2>Insightful Summary Generation</h2>
+      <p>Dive deep into your research findings with AI-generated summaries, fine-tuned for accuracy and relevance.</p>
+    </div>
+  </div>
+  </section>
+  <br/><br/><br/>
+  <section class="feature-section my-5 feature-left" id="feature1">
+    <div class="feature-container">
+      <img src="{% static 'images/last.jpeg' %}" alt="Feature 1" class="feature-image last-feature-image">
+      <div class="feature-text">
+      <h2>Begin Your Research Journey</h2>
+      <p>Start exploring the frontier of knowledge today. Our platform is ready to guide your discovery.</p>
+      <a href="#" class="btn btn-primary">Start Research</a>
+    </div>
+  </div>
+  </section>
+
+
+<script >
+    document.addEventListener("DOMContentLoaded", function() {
+        // Typing Effect
+        const typingText = "Synapse AI";
+        let index = 0;
+        let isDeleting = false;
+        const typingSpeed = 150;
+        const deletingSpeed = 75;
+        const typingElement = document.getElementById('typing-effect');
+      
+        function type() {
+          const text = isDeleting ? typingText.substring(0, index--) : typingText.substring(0, index++);
+          typingElement.innerHTML = text;
+      
+          let speed = isDeleting ? deletingSpeed : typingSpeed;
+          
+          if (!isDeleting && text === typingText) {
+            // Pause before deleting
+            speed = 2000;
+            isDeleting = true;
+          } else if (isDeleting && text === '') {
+            isDeleting = false;
+            speed = 500; // Pause before typing again
+          }
+      
+          setTimeout(type, speed);
+        }
+      
+        setTimeout(type, typingSpeed);
+      
+        // Scale on Scroll
+        window.addEventListener('scroll', () => {
+          const scale = Math.max(0.7, 1 - window.scrollY / 5000);
+          document.getElementById('hero-section').style.transform = `scale(${scale})`;
+        });
+      });
+      
+      window.addEventListener('scroll', () => {
+        document.querySelectorAll('.feature-section').forEach((section, index) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const sectionVisible = (sectionTop - window.innerHeight) < 0;
+          if (sectionVisible) {
+            section.querySelector('.feature-image').style.opacity = 1;
+            section.querySelector('.feature-text').style.opacity = 1;
+      
+            if (section.classList.contains('feature-left')) {
+              section.querySelector('.feature-image').style.animation = 'fadeInRight 2s forwards';
+              section.querySelector('.feature-text').style.animation = 'fadeInLeft 2s forwards';
+            } else if (section.classList.contains('feature-right')) {
+              section.querySelector('.feature-image').style.animation = 'fadeInLeft 2s forwards';
+              section.querySelector('.feature-text').style.animation = 'fadeInRight 2s forwards';
+            }
+          }
+        });
+      });
+      
+</script>
+{% endblock %}

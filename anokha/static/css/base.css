@@ -1,0 +1,128 @@
+/* Improved styles for layout, adapt and expand as necessary */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0 8%; */
+    background: transparent;
+    padding: 20px 50px;
+}
+
+.logo-container img.logo {
+    height: 35px; /* Make the logo slightly larger for visibility */
+    transition: transform 0.3s ease;
+     /* Smooth transition for logo on hover */
+}
+
+
+
+.logo{
+    margin: 20px;
+}
+.logo-container img.logo:hover {
+    transform: scale(1.1); /* Slightly increase logo size on hover */
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link, .request-access {
+    color: #EDEDED; /* A lighter shade of white for better readability */
+    text-decoration: none;
+    margin: 0 15px; /* Increase spacing for a less crowded look */
+    font-weight: 500; /* Slightly lighter font-weight for elegance */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .request-access:hover {
+    color: #61dafb; /* Highlight color on hover */
+}
+
+.divider {
+    color: #EDEDED; /* Match the text color for consistency */
+    margin: 0 15px; /* Match the nav-link margin */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2C2F34; /* Darker background for dropdown */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); /* Stronger shadow for depth */
+    padding: 12px 16px;
+    z-index: 1;
+    border-radius: 5px; /* Rounded corners for modern look */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.request-access {
+    color: #61dafb; /* React logo blue for consistency and appeal */
+    padding: 10px 20px; /* Padding for a button-like appearance */
+    border: 2px solid #61dafb; /* Border to enhance visibility */
+    border-radius: 5px; /* Rounded corners for modern look */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.request-access:hover {
+    background-color: #61dafb; /* Fill background on hover */
+    color: #0A0B0E; /* Contrast color for text */
+}
+
+/* Global Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+}
+
+body {
+    background: linear-gradient(145deg, #0A0B0E, #16181D, #2C2F34);
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+.container {
+    padding: 20px;
+}
+
+nav, footer {
+    background-color: #20232a;
+    color: #61dafb;
+    padding: 15px;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.background-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+}
+
+
+
