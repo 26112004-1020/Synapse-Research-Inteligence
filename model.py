@@ -1,7 +1,7 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
 quantized_model_dir = "AVMLegend/Quantised-Phi-2"
 
-model = AutoModelForCausalLM.from_pretrained(quantized_model_dir, device_map="auto", trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(quantized_model_dir, device_map="cpu", trust_remote_code=True)
 tokenizer = AutoTokenizer.from_pretrained(quantized_model_dir)
 
 prompt = "Explain logistic regression"
